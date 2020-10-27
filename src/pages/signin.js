@@ -16,12 +16,10 @@ export default function Signin() {
 	const handleSignIn = (event) => {
 		event.preventDefault();
 
-		// auth
 		firebase
 			.auth()
 			.signInWithEmailAndPassword(emailAddress, password)
 			.then(() => {
-				// push to browse page
 				history.push(ROUTES.BROWSE);
 			})
 			.catch((error) => {
@@ -30,9 +28,6 @@ export default function Signin() {
 				setError(error.message);
 			});
 	};
-
-	// check form input for validation
-	// email and password
 
 	return (
 		<>
